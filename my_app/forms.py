@@ -51,4 +51,3 @@ class emailForm(forms.Form):
     message=forms.CharField(max_length=20)
     to=forms.CharField(max_length=20)
     photo = forms.FileField()
-    lastname=forms.CharField(max_length=20)
