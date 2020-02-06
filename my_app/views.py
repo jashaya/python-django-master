@@ -10,6 +10,7 @@ from . forms import emailForm
 from django.core.mail.message import EmailMessage
 from rest_framework import generics
 from . import serializers
+import json
 
 # def display(request):
 #     st=Student.objects.all()[1:5]
@@ -137,3 +138,10 @@ class ListStudent(generics.ListCreateAPIView):
 class DetailStudent(generics.RetrieveUpdateDestroyAPIView):
     queryset=Student.objects.all()
     serializer_class=serializers.StudentSerializer
+def search(request):
+    if request.method=="POST"
+        get_value=request.POST.get('username',"test")
+        data={}
+        data['result']="you made a request"
+        return HttpResponse(json.dump(data),content-type="application/json")
+return render(request,"userdetails.html")

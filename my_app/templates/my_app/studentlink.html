@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html>
+{% for student in students %}
+{{student.name}} <a href="/appname/getdetails/{{ student.student_id}}">edit</a>
+<a href="/appname/deletedetails/{{ student.student_id}}">delete</a><br>
+{% endfor %}
+
+</html>

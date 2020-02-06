@@ -20,4 +20,5 @@ urlpatterns = [
     path('emailnew', views.newmail, name="emailnew"),
     path('api/', views.ListStudent.as_view()),
     path('<int:pk>/', views.DetailStudent.as_view())
+    path('search',views.search, name="search")
 ]

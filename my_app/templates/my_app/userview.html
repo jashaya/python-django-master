@@ -1,0 +1,4 @@
+<!DOCTYPE html>
+{% for userdetails in user %}
+    {{userdetails.name}}<img src="{{userdetails.photo.url}}"><br>
+{% endfor %}
