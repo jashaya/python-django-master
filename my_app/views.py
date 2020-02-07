@@ -139,9 +139,9 @@ class DetailStudent(generics.RetrieveUpdateDestroyAPIView):
     queryset=Student.objects.all()
     serializer_class=serializers.StudentSerializer
 def search(request):
-    if request.method=="POST"
+    if request.method=="POST":
         get_value=request.POST.get('username',"test")
         data={}
         data['result']="you made a request"
-        return HttpResponse(json.dump(data),content-type="application/json")
-return render(request,"userdetails.html")
+        return HttpResponse(json.dumps(data),content_type="application/json")
+    return render(request,"my_app/userdetails.html")
