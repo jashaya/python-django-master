@@ -14,11 +14,11 @@ urlpatterns = [
     path('userview/', views.viewUser, name="userview"),
     path('getstudent/', views.getstudentdetails, name="getstudentdetails"),
     path('getname/', views.getname, name="getname"),
-    path('getdetails/<id>', views.getdetails, name="getdetails"),
-    path('deletedetails/<id>', views.deletedetails, name="deletedetails"),
-    path('emailsend', views.emailSend, name="emailsend"),
-    path('emailnew', views.newmail, name="emailnew"),
+    path('getdetails/<id>/', views.getdetails, name="getdetails"),
+    path('deletedetails/<id>/', views.deletedetails, name="deletedetails"),
+    path('emailsend/', views.emailSend, name="emailsend"),
+    path('emailnew/', views.newmail, name="emailnew"),
     path('api/', views.ListStudent.as_view()),
-    path('<int:pk>/', views.DetailStudent.as_view())
-    path('search',views.search, name="search")
+    path('<int:pk>/', views.DetailStudent.as_view()),
+    path('search/',views.search, name="search")
 ]
