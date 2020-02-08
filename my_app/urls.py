@@ -20,5 +20,7 @@ urlpatterns = [
     path('emailnew/', views.newmail, name="emailnew"),
     path('api/', views.ListStudent.as_view()),
     path('<int:pk>/', views.DetailStudent.as_view()),
-    path('search/',views.search, name="search")
+    path('search/',views.search, name="search"),
+    path('login/',views.loginuser, name="login"),
+    path('viewsession/',views.sessofuser, name="viewsession")
 ]

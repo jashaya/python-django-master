@@ -145,3 +145,18 @@ def search(request):
         data['result']="you made a request"
         return HttpResponse(json.dumps(data),content_type="application/json")
     return render(request,"my_app/userdetails.html")
+def loginuser(request):
+    if request.method=="POST":
+
+        user=request.POST['username']
+        request.session['user']=user
+        store=request.session['user']
+    return render(request,"my_app/login.html")
+def sessofuser(request):
+    store = request.session['user']
+    # return HttpResponse("form submitted")
+    return render(request,"my_app/viewsession.html",{'sess':store})
+
+
+
+
