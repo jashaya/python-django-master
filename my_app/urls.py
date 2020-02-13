@@ -22,5 +22,6 @@ urlpatterns = [
     path('<int:pk>/', views.DetailStudent.as_view()),
     path('search/',views.search, name="search"),
     path('login/',views.loginuser, name="login"),
-    path('viewsession/',views.sessofuser, name="viewsession")
+    path('viewsession/',views.sessofuser, name="viewsession"),
+    path('page/',views.home,name="page")
 ]

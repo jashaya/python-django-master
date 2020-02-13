@@ -11,6 +11,8 @@ from django.core.mail.message import EmailMessage
 from rest_framework import generics
 from . import serializers
 import json
+from django.core.paginator import Paginator
+from .models import Post
 
 # def display(request):
 #     st=Student.objects.all()[1:5]
@@ -147,7 +149,6 @@ def search(request):
     return render(request,"my_app/userdetails.html")
 def loginuser(request):
     if request.method=="POST":
-
         user=request.POST['username']
         request.session['user']=user
         store=request.session['user']
@@ -157,6 +158,12 @@ def sessofuser(request):
     # return HttpResponse("form submitted")
     return render(request,"my_app/viewsession.html",{'sess':store})
 
+def home(request):
+    posts = Post.objects.all()
+    paginator = Paginator(posts, 2)
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
+    return render(request,"my_app/page.html",{'items': posts})
 
 
 
